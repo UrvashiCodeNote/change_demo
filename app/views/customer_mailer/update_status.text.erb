@@ -1,0 +1,28 @@
+Hello <%=@customer.first_name  %>,
+SIM Activated Succsfully <%= @customer.first_name %>!
+===============================================
+
+Customer Details:
+--------------------------
+Addresses:
+<% @customer.addresses.each do |add| %>
+  Address: <%= add.address %>
+<% end %>
+
+Phone Numbers:
+<% @customer.contact_books.each do |contact| %> 
+  Phone: <%= contact.phone %>
+<% end %>
+
+First Name: <%= @customer.first_name %>
+Last Name: <%= @customer.last_name %>
+Email: <%= @customer.email %>
+Aadhar_number: <%= @customer.aadhar_number %>
+   Congratulations on successfully activating your new SIM card! We're excited to have you on board as a new customer. Your new phone number is <%= @customer.phone_number %>.
+
+   Please note that it may take up to 24 hours for your phone number to be fully activated. In the meantime, please refer to the user guide that came with your SIM card for instructions on how to set up your phone and make your first call.
+
+   If you have any questions or need any assistance, please don't hesitate to reach out to our customer support team at support@mycompany.com.
+
+Best regards, 
+The Sim Provider Team

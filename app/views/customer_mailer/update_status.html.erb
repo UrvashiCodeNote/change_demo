@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <p>Hello <%=@customer.first_name  %>,</p>
+    <p>SIM Activated Succsfully <%= @customer.first_name %>!</p>
+    <p>
+    Customer details<br>
+    --------------------------
+    </p>
+    Succsfully</p>
+    <p>Congratulations on successfully activating your new SIM card! We're excited to have you on board as a new customer. Your new phone number is <%= @customer.phone_number %>.
+
+    Please note that it may take up to 24 hours for your phone number to be fully activated. In the meantime, please refer to the user guide that came with your SIM card for instructions on how to set up your phone and make your first call.
+
+    If you have any questions or need any assistance, please don't hesitate to reach out to our customer support team at support@mycompany.com.</p>
+    Message:<br>
+    
+    <h1>Addresses:</h1>
+     <% @customer.addresses.each do |add| %>
+       <p>Address: <%= add.address %></p>
+    <% end %>
+
+    <h1>Phone Numbers:</h1>
+      <% @customer.contact_books.each do |contact| %> 
+      <p>Phone: <%= contact.phone %></p>
+    <% end %>
+    ----------
+    </p>
+    
+    Thank you for choosing our service!
+    <p>Best regards, </p>
+    <p>The Sim Provider Team</p>
+  </body>
+</html>
+
+
+
+
+
+

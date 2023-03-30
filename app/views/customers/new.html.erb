@@ -1,0 +1,70 @@
+<h1><%= t "customer" %></h1>
+
+
+<%= form_with model: @customer do |form| %>
+  <div>
+    <%= form.label :first_name, "#{t('first_name')}" %><br>
+    <%= form.text_field :first_name %>
+    <% @customer.errors.full_messages_for(:first_name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :last_name, "#{t('last_name')}" %><br>
+    <%= form.text_field :last_name %><br>
+    <% @customer.errors.full_messages_for(:last_name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :email, "#{t('email')}" %><br>
+    <%= form.text_field :email %>
+    <% @customer.errors.full_messages_for(:email).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :aadhar_number, "#{t('aadhar_num')}" %><br>
+    <%= form.text_field :aadhar_number %>
+    <% @customer.errors.full_messages_for(:aadhar_number).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :aadhar_image, "#{t('aadhar_img')}" %><br>
+     <%= form.file_field :aadhar_image %>
+    <% @customer.errors.full_messages_for(:aadhar_image).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :address, "#{t('address')}" %><br>
+    <%= form.text_area :address %>
+  </div>
+
+  <div>
+    <%= form.label :city , "#{t('city')}"%><br>
+    <%= form.text_field :city %>
+  </div>
+
+ 
+  <%= form.label :phone, "#{t('phone')}" %><br>
+  <div style="border: 1px solid black; padding: 10px; width: 100px;">
+    <%=  form.hidden_field :phone, value:  @customer.phone %>
+     <%= hidden_field_tag "phone", @customer.phone %>
+   <%= @customer.phone %>
+   <%= form.submit "Verify" ,formaction: verify_path, method: :post, data: { turbo: "true" } %>
+  </div>
+
+  <div>
+    <%= form.submit "Create Customer"  %>
+  </div>
+<% end %>
+
+
+

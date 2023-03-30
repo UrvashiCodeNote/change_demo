@@ -1,0 +1,40 @@
+<h1>Customer Details</h1>
+
+<table border>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Address</th>
+      <th>City</th>
+      <th>Contact Books</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%  @customer_details.each do |customer| %>
+      <tr>
+        <td><%= customer.first_name %></td>
+        <td><%= customer.last_name %></td>
+        <td><%= customer.email %></td>
+         <td>
+          <% customer.addresses.each do |address| %>
+            <%= address.address %>
+          <% end %>
+        </td>
+        <td>
+          <% customer.addresses.each do |city| %>
+            <%= city.city %>
+          <% end %>
+        </td>
+        <td>
+          <% customer.contact_books.each do |contact_book| %>
+            <%= contact_book.phone %>
+          <% end %>
+        </td>      
+      </tr>
+    <% end %>
+
+  </tbody>
+
+</table>

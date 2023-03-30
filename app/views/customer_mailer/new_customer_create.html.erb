@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <p>Account Succsfully Created <%= @customer.first_name %>!</p>
+    <p>
+    Customer details<br>
+    --------------------------
+    </p>
+    <p>First Name: <%= @customer.first_name %></p>
+    <p>Last Name: <%= @customer.last_name %></p>
+    <p>Email: <%= @customer.email %></p>
+    <p>Address: <%= @customer.addresses %></p>
+
+    <% @customer.contact_books.each do |contact| %>
+     <p>Phone: <%= contact.phone %></p>
+    <% end %>
+    <p>Aadhar_number: <%= @customer.aadhar_number %></p>
+    <p>
+    Message:<br>
+    ----------
+    </p>
+    <p>Best regards, </p>
+     <p>Customer Support Representative</p>
+  </body>
+</html>
